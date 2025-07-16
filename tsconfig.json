@@ -4,10 +4,16 @@
   "files": [],
   "references": [
     {
-      "path": "./apps/frontend-e2e"
+      "path": "./apps/frontend"
     },
     {
-      "path": "./apps/frontend"
+      "path": "./packages/shared/ui"
+    },
+    {
+      "path": "./packages/shared/data-access"
+    },
+    {
+      "path": "./e2e/frontend-e2e"
     }
   ]
 }

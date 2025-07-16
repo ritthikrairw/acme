@@ -5,6 +5,10 @@
   "nx": {
     "implicitDependencies": [
       "@acme/frontend"
+    ],
+    "tags": [
+      "type:e2e",
+      "scope:frontend"
     ]
   }
 }
