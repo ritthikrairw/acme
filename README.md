@@ -1,81 +1,65 @@
-# Acme
+# NX Monorepo Boilerplate
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+## Overview
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is almost ready ✨.
+This repository serves as a boilerplate for building scalable and maintainable applications using the Nx monorepo framework. It includes a variety of tools, libraries, and configurations to streamline development.
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/nx-api/next?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+## Features
 
-## Finish your CI setup
+### Core Tools
 
-[Click here to finish setting up your workspace!](https://cloud.nx.app/connect/G9kd1zc0nM)
+- ✅ **TypeScript**: Strongly typed programming language for building robust applications.
+- ✅ **ESLint**: Linter for identifying and fixing code issues.
+  - **@nx/enforce-module-boundaries**: Enforces module boundaries to maintain a clean architecture.
+  - **eslint-config-nex**: Pre-configured ESLint rules for Next.js applications.
+  - **eslint-config-prettier**: Code formatter for maintaining consistent code style.
+  - **eslint-plugin-import**: Plugin for managing import/export syntax.
+  - **eslint-plugin-jsx-a11y**: Accessibility checks for JSX elements.
+  - **eslint-plugin-perfectionist**: Enforces code style rules for better readability.
+  - **eslint-plugin-playwright**: Provides Playwright-specific linting rules.
+  - **eslint-plugin-react**: Linting rules for React applications.
+  - **eslint-plugin-react-hooks**: Enforces rules of React Hooks.
+- ✅ **Prettier**: Code formatter for consistent style.
+- ✅ **Husky**: Git hooks for enforcing pre-commit checks.
+  - **lint-staged**: Runs linters on pre-committed files to ensure code quality.
+- ✅ **cz-git**: Customizable commit message prompt with Gitmoji support.
+  - **commitizen**: Tool for creating standardized commit messages.
+  - **commitlint**: Ensures commit messages follow a defined convention.
+  - **commitlint-config-gitmoji**: Emoji-based commit message convention for better readability.
 
-## Run tasks
+### UI Libraries
 
-To run the dev server for your app, use:
+- ✅ **HeroUI**: Pre-designed UI components for modern web applications.
+- ✅ **Tailwind CSS**: Utility-first CSS framework for rapid UI development.
 
-```sh
-npx nx dev frontend
-```
+### Helpers Libraries
 
-To create a production bundle:
+🚧 in progress
 
-```sh
-npx nx build frontend
-```
+## Applications
 
-To see all available targets to run for a project, run:
+- ✅ **Next.js App**: Fully functional Next.js application.
+- 🚧 **Tanstack Start**: Starter template for Tanstack (In Progress).
+- 🚧 **React App**: React application setup (In Progress).
+- 🚧 **Node.js App**: Node.js backend application (In Progress).
+- 🚧 **Cloudflare Worker**: Serverless application for Cloudflare (In Progress).
+- 🚧 **Hono App**: Application using the Hono framework (In Progress).
 
-```sh
-npx nx show project frontend
-```
+## Packages and Libraries
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
+- ✅ **Shared Feature**: Reusable features shared across applications.
+- ✅ **Shared Data-access**: Centralized data access layer.
+- ✅ **Shared UI**: Common UI components.
+- ✅ **Shared Utilities**: Utility functions for various use cases.
 
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+## Planned Enhancements
 
-## Add new projects
+- 🚧 Build applications as Docker images.
+- 🚧 Deploy applications with Cloudflare Pages/Workers.
+- 🚧 Automate build and publish processes to GitHub Registry.
+- 🚧 Manage environment variables with dotenvx.
+- 🚧 Add Storybook for UI component documentation and testing.
 
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
+---
 
-Use the plugin's generator to create new projects.
-
-To generate a new application, use:
-
-```sh
-npx nx g @nx/next:app demo
-```
-
-To generate a new library, use:
-
-```sh
-npx nx g @nx/react:lib mylib
-```
-
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
-
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Install Nx Console
-
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
-
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Useful links
-
-Learn more:
-
-- [Learn more about this workspace setup](https://nx.dev/nx-api/next?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-And join the Nx community:
-
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+This README provides a high-level overview of the repository. For detailed instructions on setting up and running the project, refer to the documentation in the respective application or package folders.
