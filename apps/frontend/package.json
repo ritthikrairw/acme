@@ -2,6 +2,11 @@
   "name": "@acme/frontend",
   "version": "0.0.1",
   "private": true,
+  "scripts": {
+    "dev": "dotenvx run -- next dev",
+    "build": "dotenvx run -- next build",
+    "start": "dotenvx run -- next start"
+  },
   "dependencies": {
     "next": "~15.2.4",
     "react": "19.0.0",

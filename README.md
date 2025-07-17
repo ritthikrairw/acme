@@ -57,8 +57,8 @@ This repository serves as a boilerplate for building scalable and maintainable a
 - 🚧 Build applications as Docker images.
 - 🚧 Deploy applications with Cloudflare Pages/Workers.
 - 🚧 Automate build and publish processes to GitHub Registry.
-- 🚧 Manage environment variables with dotenvx.
-- 🚧 Add Storybook for UI component documentation and testing.
+- ✅ Manage environment variables with @dotenvx/dotenvx, @t3-oss/env-core and @t3-oss/env-nextjs.
+- ✅ Add Storybook for UI component documentation and testing.
 
 ---
 

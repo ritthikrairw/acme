@@ -10,6 +10,7 @@
       "next",
       "@nx/next/typings/image.d.ts"
     ],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "rootDir": "src",
     "jsx": "react-jsx",
     "tsBuildInfoFile": "dist/tsconfig.lib.tsbuildinfo"
