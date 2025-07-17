@@ -1,13 +1,13 @@
 {
-  "name": "@acme/tanstack",
+  "name": "@acme/tanstack-start",
   "version": "0.0.1",
   "private": true,
   "nx": {
-    "name": "tanstack",
+    "name": "tanstack-start",
     "projectType": "application",
     "tags": [
       "type:app",
-      "scope:tanstack"
+      "scope:tanstack-start"
     ]
   }
 }

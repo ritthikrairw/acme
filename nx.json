@@ -115,6 +115,11 @@
     },
     "test": {
       "dependsOn": ["^build"]
+    },
+    "lint": {
+      "options": {
+        "fix": true
+      }
     }
   },
   "generators": {

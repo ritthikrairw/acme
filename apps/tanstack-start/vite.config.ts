@@ -15,7 +15,7 @@ export default defineConfig(() => ({
     outDir: "./dist",
     reportCompressedSize: true,
   },
-  cacheDir: "../../node_modules/.vite/apps/tanstack",
+  cacheDir: "../../node_modules/.vite/apps/tanstack-start",
   plugins: [react()],
   preview: {
     host: "localhost",

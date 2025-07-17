@@ -5,7 +5,6 @@
   "scripts": {
     "format": "prettier . --write",
     "lint": "nx run-many --target lint --all",
-    "lint:fix": "nx run-many --target lint --all --fix",
     "prepare": "husky install",
     "commit": "cz"
   },
@@ -102,11 +101,5 @@
     "e2e/*",
     "packages/*",
     "packages/shared/*"
-  ],
-  "lint-staged": {
-    "*": [
-      "prettier --write",
-      "nx run-many --target lint --all --fix"
-    ]
-  }
+  ]
 }

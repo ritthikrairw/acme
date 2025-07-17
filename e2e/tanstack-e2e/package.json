@@ -7,10 +7,10 @@
     "projectType": "application",
     "tags": [
       "type:e2e",
-      "scope:tanstack"
+      "scope:tanstack-start"
     ],
     "implicitDependencies": [
-      "tanstack"
+      "tanstack-start"
     ]
   }
 }
