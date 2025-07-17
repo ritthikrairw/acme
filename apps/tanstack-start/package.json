@@ -80,8 +80,15 @@
           "metadata": {
             "labels": [
               "org.opencontainers.image.title=ACME TanStack Start",
-              "org.opencontainers.image.licenses=Proprietary",
-              "org.opencontainers.image.description=TanStack Start application for the ACME project"
+              "org.opencontainers.image.description=TanStack Start application for the ACME project",
+              "org.opencontainers.image.authors=ritthikrai.w",
+              "org.opencontainers.image.licenses=Proprietary"
+            ],
+            "annotations": [
+              "org.opencontainers.image.title=ACME TanStack Start",
+              "org.opencontainers.image.description=TanStack Start application for the ACME project",
+              "org.opencontainers.image.authors=ritthikrai.w",
+              "org.opencontainers.image.licenses=Proprietary"
             ],
             "images": [
               "ghcr.io/ritthikrairw/acme-tanstack-start"
