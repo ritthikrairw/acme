@@ -48,12 +48,6 @@
   ],
   "references": [
     {
-      "path": "../../packages/shared/util"
-    },
-    {
-      "path": "../../packages/shared/ui"
-    },
-    {
       "path": "../../packages/shared/feature"
     }
   ]

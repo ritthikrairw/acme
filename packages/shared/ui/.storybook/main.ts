@@ -1,16 +1,21 @@
 import type { StorybookConfig } from "@storybook/react-vite";
 
+import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
+import react from "@vitejs/plugin-react";
+import { mergeConfig } from "vite";
+
 const config: StorybookConfig = {
   addons: [],
   framework: {
     name: "@storybook/react-vite",
-    options: {
-      builder: {
-        viteConfigPath: "vite.config.ts",
-      },
-    },
+    options: {},
   },
   stories: ["../src/lib/**/*.@(mdx|stories.@(js|jsx|ts|tsx))"],
+
+  viteFinal: async (config) =>
+    mergeConfig(config, {
+      plugins: [react(), nxViteTsPaths()],
+    }),
 };
 
 export default config;

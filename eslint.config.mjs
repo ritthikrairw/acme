@@ -59,7 +59,7 @@ export default [
               sourceTag: "scope:shared",
             },
           ],
-          enforceBuildableLibDependency: true,
+          enforceBuildableLibDependency: false,
         },
       ],
     },

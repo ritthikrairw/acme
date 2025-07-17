@@ -20,9 +20,6 @@
     },
     {
       "path": "./packages/shared/feature"
-    },
-    {
-      "path": "./packages/feature-home"
     }
   ],
   "ts-node": {
