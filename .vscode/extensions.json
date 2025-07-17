@@ -4,6 +4,11 @@
     "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint",
     "ms-playwright.playwright",
-    "firsttris.vscode-jest-runner"
+    "firsttris.vscode-jest-runner",
+    "formulahendry.auto-rename-tag",
+    "bradlc.vscode-tailwindcss",
+    "streetsidesoftware.code-spell-checker",
+    "mkxml.vscode-filesize",
+    "christian-kohler.path-intellisense"
   ]
 }
