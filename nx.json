@@ -105,6 +105,14 @@
     }
   ],
   "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["{projectRoot}/.next"],
+      "cache": true
+    },
+    "container": {
+      "dependsOn": ["^build"]
+    },
     "test": {
       "dependsOn": ["^build"]
     }

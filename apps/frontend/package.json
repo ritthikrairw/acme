@@ -2,11 +2,6 @@
   "name": "@acme/frontend",
   "version": "0.0.1",
   "private": true,
-  "scripts": {
-    "dev": "dotenvx run -- next dev",
-    "build": "dotenvx run -- next build",
-    "start": "dotenvx run -- next start"
-  },
   "dependencies": {
     "next": "~15.2.4",
     "react": "19.0.0",
@@ -18,80 +13,86 @@
       "scope:frontend"
     ],
     "targets": {
+      "dev": {
+        "continuous": true,
+        "options": {
+          "cwd": "{projectRoot}",
+          "command": "dotenvx run -- next dev"
+        },
+        "executor": "nx:run-commands",
+        "configurations": {},
+        "parallelism": true
+      },
+      "start": {
+        "continuous": true,
+        "options": {
+          "cwd": "{projectRoot}",
+          "command": "dotenvx run -- next start"
+        },
+        "dependsOn": [
+          "build"
+        ],
+        "executor": "nx:run-commands",
+        "configurations": {},
+        "parallelism": true
+      },
+      "build": {
+        "options": {
+          "cwd": "{projectRoot}",
+          "tty": false,
+          "command": "dotenvx run -- next build"
+        },
+        "dependsOn": [
+          "^build"
+        ],
+        "cache": true,
+        "inputs": [
+          "default",
+          "^production",
+          {
+            "externalDependencies": [
+              "next"
+            ]
+          }
+        ],
+        "outputs": [
+          "{projectRoot}/.next"
+        ],
+        "executor": "nx:run-commands",
+        "configurations": {},
+        "parallelism": true
+      },
       "container": {
         "executor": "@nx-tools/nx-container:build",
         "dependsOn": [
           "build"
         ],
-        "defaultConfiguration": "development",
         "options": {
-          "defaultEngine": "docker",
-          "defaultRegistry": "ghcr.io",
+          "load": false,
+          "push": true,
           "platforms": [
             "linux/amd64",
             "linux/arm64"
-          ]
-        },
-        "configurations": {
-          "development": {
-            "push": false,
-            "metadata": {
-              "images": [
-                "ritthikrairw/acme-frontend",
-                "ghcr.io/ritthikrairw/acme-frontend"
-              ],
-              "tags": [
-                "type=raw,value=development",
-                "type=schedule",
-                "type=ref,event=branch",
-                "type=ref,event=tag",
-                "type=ref,event=pr",
-                "type=semver,pattern={{version}}",
-                "type=semver,pattern={{major}}.{{minor}}",
-                "type=semver,pattern={{major}}",
-                "type=sha"
-              ]
-            }
-          },
-          "staging": {
-            "push": true,
-            "metadata": {
-              "images": [
-                "ritthikrairw/acme-frontend",
-                "ghcr.io/ritthikrairw/acme-frontend"
-              ],
-              "tags": [
-                "type=raw,value=staging",
-                "type=schedule",
-                "type=ref,event=branch",
-                "type=ref,event=tag",
-                "type=ref,event=pr",
-                "type=semver,pattern={{version}}",
-                "type=semver,pattern={{major}}.{{minor}}",
-                "type=semver,pattern={{major}}",
-                "type=sha"
-              ]
-            }
-          },
-          "production": {
-            "push": true,
-            "metadata": {
-              "images": [
-                "ritthikrairw/acme-frontend",
-                "ghcr.io/ritthikrairw/acme-frontend"
-              ],
-              "tags": [
-                "type=raw,value=production",
-                "type=schedule",
-                "type=ref,event=branch",
-                "type=ref,event=tag",
-                "type=ref,event=pr",
-                "type=semver,pattern={{version}}",
-                "type=semver,pattern={{major}}.{{minor}}",
-                "type=semver,pattern={{major}}",
-                "type=sha"
-              ]
-            }
+          ],
+          "metadata": {
+            "labels": [
+              "org.opencontainers.image.title=ACME Frontend",
+              "org.opencontainers.image.licenses=Proprietary",
+              "org.opencontainers.image.description=Frontend application for the ACME project"
+            ],
+            "images": [
+              "ghcr.io/ritthikrairw/acme-frontend"
+            ],
+            "tags": [
+              "type=schedule",
+              "type=ref,event=branch",
+              "type=ref,event=tag",
+              "type=ref,event=pr",
+              "type=semver,pattern={{version}}",
+              "type=semver,pattern={{major}}.{{minor}}",
+              "type=semver,pattern={{major}}",
+              "type=sha"
+            ]
           }
         }
       }
