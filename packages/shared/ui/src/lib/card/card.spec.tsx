@@ -4,7 +4,7 @@ import Card from "./card";
 
 describe("Card", () => {
   it("should render successfully", () => {
-    const { baseElement } = render(<Card />);
+    const { baseElement } = render(<Card>Content</Card>);
     expect(baseElement).toBeTruthy();
   });
 });
