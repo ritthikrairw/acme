@@ -1,10 +1,18 @@
 'use client';
 
-export function Button() {
+interface ButtonProps {
+  onClick?: () => void;
+  children: React.ReactNode;
+}
+
+export function Button({ onClick, children }: ButtonProps) {
   return (
-    <div className="xxx">
-      <h1>Welcome to Button!</h1>
-    </div>
+    <button
+      onClick={onClick}
+      className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+    >
+      {children}
+    </button>
   );
 }
 

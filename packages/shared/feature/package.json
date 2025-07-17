@@ -1,5 +1,5 @@
 {
-  "name": "@acme/shared-ui",
+  "name": "@acme/shared-feature",
   "version": "0.0.1",
   "type": "module",
   "main": "./dist/index.js",
@@ -15,9 +15,9 @@
     }
   },
   "nx": {
-    "name": "shared-ui",
+    "name": "shared-feature",
     "tags": [
-      "type:ui",
+      "type:feature",
       "scope:shared"
     ]
   }

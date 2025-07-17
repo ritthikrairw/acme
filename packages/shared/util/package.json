@@ -1,6 +1,7 @@
 {
-  "name": "@acme/shared-ui",
+  "name": "@acme/shared-util",
   "version": "0.0.1",
+  "private": true,
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -15,10 +16,13 @@
     }
   },
   "nx": {
-    "name": "shared-ui",
+    "name": "shared-util",
     "tags": [
-      "type:ui",
+      "type:util",
       "scope:shared"
     ]
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
   }
 }

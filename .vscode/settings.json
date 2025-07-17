@@ -1,4 +1,5 @@
 {
-  "nxConsole.generateAiAgentRules": true,
-  "eslint.workingDirectories": [{ "mode": "auto" }]
+  "eslint.enable": true,
+  "eslint.format.enable": true,
+  "nxConsole.generateAiAgentRules": true
 }
