@@ -7,11 +7,11 @@ export default function Index() {
     <main className="container mx-auto p-4">
       <div className="grid gap-6">
         <div>
-          <p className="text-lg font-semibold mb-2">Home Feature</p>
+          <p className="mb-2 text-lg font-semibold">Home Feature</p>
           <Home />
         </div>
         <div>
-          <p className="text-lg font-semibold mb-2">Environments</p>
+          <p className="mb-2 text-lg font-semibold">Environments</p>
           <ul>
             {Object.entries(env).map(([key, value]) => (
               <li className="text-sm" key={key}>

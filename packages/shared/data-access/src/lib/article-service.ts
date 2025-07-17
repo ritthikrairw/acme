@@ -14,7 +14,7 @@ export class ArticleService {
       if (!response.ok) {
         if (response.status === 404) return null;
         throw new Error(
-          `Failed to fetch article: ${response.status} ${response.statusText}`
+          `Failed to fetch article: ${response.status} ${response.statusText}`,
         );
       }
       const data = await response.json();
@@ -29,7 +29,7 @@ export class ArticleService {
       const response = await fetch(this.apiUrl);
       if (!response.ok) {
         throw new Error(
-          `Failed to fetch articles: ${response.status} ${response.statusText}`
+          `Failed to fetch articles: ${response.status} ${response.statusText}`,
         );
       }
       const data = await response.json();
