@@ -1,5 +1,19 @@
 module.exports = {
-  additionalQuestions: [],
+ additionalQuestions: [
+  {
+    message: "Select the type of change that you're committing:",
+    name: "type", // This will filter the commit types
+    source: (answersSoFar, input) => {
+      input = input || ""; // Default to an empty string if no input
+      return Promise.resolve(
+        module.exports.types
+          .filter((type) => type.name.toLowerCase().includes(input.toLowerCase()))
+          .map((type) => type.name)
+      );
+    },
+    type: "autocomplete", // Use an autocomplete input type
+  },
+],
   allowBreakingChanges: ["feat", "fix"],
   allowCustomScopes: true,
   allowTicketNumber: false,
@@ -8,7 +22,6 @@ module.exports = {
   /*
     scopeOverrides: {
       fix: [
-  
         {name: 'merge'},
         {name: 'style'},
         {name: 'e2eTest'},
