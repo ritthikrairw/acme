@@ -54,11 +54,14 @@ This repository serves as a boilerplate for building scalable and maintainable a
 
 ## Planned Enhancements
 
-- 🚧 Build applications as Docker images.
+- ✅ Build applications as Docker images.
 - 🚧 Deploy applications with Cloudflare Pages/Workers.
 - 🚧 Automate build and publish processes to GitHub Registry.
 - ✅ Manage environment variables with @dotenvx/dotenvx, @t3-oss/env-core and @t3-oss/env-nextjs.
 - ✅ Add Storybook for UI component documentation and testing.
+- 🚧 Implement the environment build for Development, Staging, Production
+- 🚧 Add unit tests for all applications and libraries.
+- 🚧 Implement the cache on build
 
 ---
 
