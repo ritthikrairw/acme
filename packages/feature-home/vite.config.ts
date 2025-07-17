@@ -1,8 +1,8 @@
-import react from '@vitejs/plugin-react';
-import * as path from 'path';
+import react from "@vitejs/plugin-react";
+import * as path from "path";
 /// <reference types='vitest' />
-import { defineConfig } from 'vite';
-import dts from 'vite-plugin-dts';
+import { defineConfig } from "vite";
+import dts from "vite-plugin-dts";
 
 export default defineConfig(() => ({
   // Uncomment this if you are using workers.
@@ -18,26 +18,26 @@ export default defineConfig(() => ({
     emptyOutDir: true,
     lib: {
       // Could also be a dictionary or array of multiple entry points.
-      entry: 'src/index.ts',
-      fileName: 'index',
+      entry: "src/index.ts",
+      fileName: "index",
       // Change this to the formats you want to support.
       // Don't forget to update your package.json as well.
-      formats: ['es' as const],
-      name: 'feature-home',
+      formats: ["es" as const],
+      name: "feature-home",
     },
-    outDir: './dist',
+    outDir: "./dist",
     reportCompressedSize: true,
     rollupOptions: {
       // External packages that should not be bundled into your library.
-      external: ['react', 'react-dom', 'react/jsx-runtime'],
+      external: ["react", "react-dom", "react/jsx-runtime"],
     },
   },
-  cacheDir: '../../node_modules/.vite/packages/feature-home',
+  cacheDir: "../../node_modules/.vite/packages/feature-home",
   plugins: [
     react(),
     dts({
-      entryRoot: 'src',
-      tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
+      entryRoot: "src",
+      tsconfigPath: path.join(__dirname, "tsconfig.lib.json"),
     }),
   ],
   root: __dirname,

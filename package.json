@@ -2,7 +2,11 @@
   "name": "@acme/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "prettier": "prettier --write .",
+    "lint": "nx run-many --target lint --all",
+    "lint:fix": "nx run-many --target lint --all --fix"
+  },
   "private": true,
   "dependencies": {
     "next": "~15.2.4",

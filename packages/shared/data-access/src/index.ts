@@ -1,1 +1,1 @@
-export * from './lib/article-service.js';
+export * from "./lib/article-service.js";
