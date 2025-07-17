@@ -1,0 +1,24 @@
+# # Ignore local environment files
+# .env
+# .env.*
+
+# # Ignore logs
+# *.log
+
+# # Ignore temporary files
+# *.swp
+# *.swo
+# .DS_Store
+# Thumbs.db
+
+# # Ignore test and coverage files
+# coverage
+# *.spec.*
+# *.test.*
+
+# # Ignore build cache
+# .next
+# .cache
+
+# # Ignore node modules
+# node_modules

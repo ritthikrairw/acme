@@ -1,30 +1,27 @@
-# Use an official Node.js runtime as the base image
-FROM node:22-alpine AS base
+# This template uses Automatically Copying Traced Files feature
+# so you need to setup your Next Config file to use `output: 'standalone'`
+# Please read this for more information https://nextjs.org/docs/pages/api-reference/next-config-js/output
 
-# Set the working directory
-WORKDIR /app
-
-# Install dependencies only when needed
-FROM base AS dependencies
-COPY package.json package-lock.json ./
-RUN npm ci --only=production
-
-# Build the application
-FROM base AS builder
-COPY . .
-RUN npm ci && npm run build
-
-# Use a smaller image for the final stage
-FROM node:22-alpine AS runner
-WORKDIR /app
-
-# Copy built application and production dependencies
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/package.json ./package.json
-
-# Expose the port the app runs on
+# Production image, copy all the files and run next
+FROM docker.io/node:lts-alpine AS runner
+RUN apk add --no-cache dumb-init
+ENV NODE_ENV=production
+ENV PORT=3000
+WORKDIR /usr/src/app
+COPY apps/@acme/frontend/next.config.js ./
+COPY apps/@acme/frontend/public ./public
+COPY apps/@acme/frontend/.next/standalone/apps/@acme/frontend ./
+COPY apps/@acme/frontend/.next/standalone/package.json ./
+COPY apps/@acme/frontend/.next/standalone/node_modules ./node_modules
+COPY apps/@acme/frontend/.next/static ./.next/static
+# RUN npm i sharp
+RUN chown -R node:node .
+USER node
 EXPOSE 3000
-
-# Start the application
-CMD ["npm", "start"]
+# COPY --chown=node:node ./tools/scripts/entrypoints/api.sh /usr/local/bin/docker-entrypoint.sh
+# ENTRYPOINT [ "docker-entrypoint.sh" ]
+# Next.js collects completely anonymous telemetry data about general usage.
+# Learn more here: https://nextjs.org/telemetry
+# Uncomment the following line in case you want to disable telemetry.
+ENV NEXT_TELEMETRY_DISABLED=1
+CMD ["dumb-init", "node", "server.js"]

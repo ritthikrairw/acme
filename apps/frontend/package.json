@@ -16,6 +16,85 @@
     "tags": [
       "type:app",
       "scope:frontend"
-    ]
+    ],
+    "targets": {
+      "container": {
+        "executor": "@nx-tools/nx-container:build",
+        "dependsOn": [
+          "build"
+        ],
+        "defaultConfiguration": "development",
+        "options": {
+          "defaultEngine": "docker",
+          "defaultRegistry": "ghcr.io",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ]
+        },
+        "configurations": {
+          "development": {
+            "push": false,
+            "metadata": {
+              "images": [
+                "ritthikrairw/acme-frontend",
+                "ghcr.io/ritthikrairw/acme-frontend"
+              ],
+              "tags": [
+                "type=raw,value=development",
+                "type=schedule",
+                "type=ref,event=branch",
+                "type=ref,event=tag",
+                "type=ref,event=pr",
+                "type=semver,pattern={{version}}",
+                "type=semver,pattern={{major}}.{{minor}}",
+                "type=semver,pattern={{major}}",
+                "type=sha"
+              ]
+            }
+          },
+          "staging": {
+            "push": true,
+            "metadata": {
+              "images": [
+                "ritthikrairw/acme-frontend",
+                "ghcr.io/ritthikrairw/acme-frontend"
+              ],
+              "tags": [
+                "type=raw,value=staging",
+                "type=schedule",
+                "type=ref,event=branch",
+                "type=ref,event=tag",
+                "type=ref,event=pr",
+                "type=semver,pattern={{version}}",
+                "type=semver,pattern={{major}}.{{minor}}",
+                "type=semver,pattern={{major}}",
+                "type=sha"
+              ]
+            }
+          },
+          "production": {
+            "push": true,
+            "metadata": {
+              "images": [
+                "ritthikrairw/acme-frontend",
+                "ghcr.io/ritthikrairw/acme-frontend"
+              ],
+              "tags": [
+                "type=raw,value=production",
+                "type=schedule",
+                "type=ref,event=branch",
+                "type=ref,event=tag",
+                "type=ref,event=pr",
+                "type=semver,pattern={{version}}",
+                "type=semver,pattern={{major}}.{{minor}}",
+                "type=semver,pattern={{major}}",
+                "type=sha"
+              ]
+            }
+          }
+        }
+      }
+    }
   }
 }
