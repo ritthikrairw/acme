@@ -261,7 +261,7 @@ module.exports = {
         "test",
         "chore",
         "wip",
-        "config", // Add this type
+        "config",
         "remove",
         "init",
         "deploy",
