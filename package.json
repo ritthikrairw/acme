@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "format": "prettier --write .",
+    "format": "prettier . --write",
     "lint": "nx run-many --target lint --all",
     "lint:fix": "nx run-many --target lint --all --fix",
     "prepare": "husky install",
@@ -102,7 +102,7 @@
   ],
   "lint-staged": {
     "*": [
-      "prettier --write .",
+      "prettier . --write",
       "nx run-many --target lint --all"
     ]
   }
