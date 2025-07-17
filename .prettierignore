@@ -3,4 +3,12 @@
 /coverage
 /.nx/cache
 /.nx/workspace-data
-.next
+**/build
+**/.next
+**/.tanstack
+**/.output
+**/.nitro
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+routeTree.gen.ts

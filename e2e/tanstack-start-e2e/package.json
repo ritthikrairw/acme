@@ -1,9 +1,9 @@
 {
-  "name": "tanstack-e2e",
+  "name": "tanstack-start-e2e",
   "version": "0.0.1",
   "private": true,
   "nx": {
-    "name": "tanstack-e2e",
+    "name": "tanstack-start-e2e",
     "projectType": "application",
     "tags": [
       "type:e2e",

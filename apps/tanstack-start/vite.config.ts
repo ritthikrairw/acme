@@ -1,6 +1,9 @@
-import react from "@vitejs/plugin-react";
 /// <reference types='vitest' />
+
+import { tanstackStart } from "@tanstack/react-start/plugin/vite";
+import viteReact from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
+import tsConfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig(() => ({
   // Uncomment this if you are using workers.
@@ -16,7 +19,13 @@ export default defineConfig(() => ({
     reportCompressedSize: true,
   },
   cacheDir: "../../node_modules/.vite/apps/tanstack-start",
-  plugins: [react()],
+  plugins: [
+    tsConfigPaths({
+      projects: ["./tsconfig.json"],
+    }),
+    tanstackStart({ customViteReactPlugin: true }),
+    viteReact(),
+  ],
   preview: {
     host: "localhost",
     port: 4200,

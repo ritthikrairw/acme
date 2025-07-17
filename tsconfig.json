@@ -22,10 +22,10 @@
       "path": "./packages/shared/feature"
     },
     {
-      "path": "./e2e/tanstack-start-e2e"
+      "path": "./apps/tanstack-start"
     },
     {
-      "path": "./apps/tanstack-start"
+      "path": "./e2e/tanstack-start-e2e"
     }
   ],
   "ts-node": {
