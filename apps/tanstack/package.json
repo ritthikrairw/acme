@@ -1,0 +1,13 @@
+{
+  "name": "@acme/tanstack",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "name": "tanstack",
+    "projectType": "application",
+    "tags": [
+      "type:app",
+      "scope:tanstack"
+    ]
+  }
+}

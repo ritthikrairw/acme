@@ -1,16 +1,16 @@
 {
-  "name": "@acme/frontend-e2e",
+  "name": "tanstack-e2e",
   "version": "0.0.1",
   "private": true,
   "nx": {
-    "name": "frontend-e2e",
+    "name": "tanstack-e2e",
     "projectType": "application",
     "tags": [
       "type:e2e",
-      "scope:frontend"
+      "scope:tanstack"
     ],
     "implicitDependencies": [
-      "frontend"
+      "tanstack"
     ]
   }
 }

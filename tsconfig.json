@@ -20,6 +20,12 @@
     },
     {
       "path": "./packages/shared/feature"
+    },
+    {
+      "path": "./e2e/tanstack-e2e"
+    },
+    {
+      "path": "./apps/tanstack"
     }
   ],
   "ts-node": {

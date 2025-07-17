@@ -8,6 +8,8 @@
     "react-dom": "19.0.0"
   },
   "nx": {
+    "name": "frontend",
+    "projectType": "application",
     "tags": [
       "type:app",
       "scope:frontend"

@@ -17,6 +17,7 @@
   },
   "nx": {
     "name": "shared-data-access",
+    "projectType": "library",
     "tags": [
       "type:data-access",
       "scope:shared"

@@ -13,6 +13,7 @@
   },
   "nx": {
     "name": "shared-feature",
+    "projectType": "library",
     "tags": [
       "type:feature",
       "scope:shared"

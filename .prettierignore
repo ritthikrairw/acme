@@ -4,3 +4,6 @@
 /.nx/cache
 /.nx/workspace-data
 .next
+.gitkeep
+.gitignore
+*.ico

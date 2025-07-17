@@ -17,6 +17,7 @@
   },
   "nx": {
     "name": "shared-util",
+    "projectType": "library",
     "tags": [
       "type:util",
       "scope:shared"

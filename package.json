@@ -106,7 +106,7 @@
   "lint-staged": {
     "*": [
       "prettier --write",
-      "nx run-many --target lint --all"
+      "nx run-many --target lint --all --fix"
     ]
   }
 }
