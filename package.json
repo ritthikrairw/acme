@@ -97,6 +97,9 @@
     "packages/shared/*"
   ],
   "lint-staged": {
-    "*": "nx run-many --target lint --all & prettier --write ."
+    "*": [
+      "nx run-many --target lint --all"
+    ],
+    "!*.gitignore": []
   }
 }
