@@ -1,4 +1,5 @@
 {
+  "trailingComma": "none",
   "singleQuote": false,
   "plugins": ["prettier-plugin-sh", "prettier-plugin-tailwindcss"]
 }

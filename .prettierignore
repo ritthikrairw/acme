@@ -8,6 +8,8 @@
 **/.tanstack
 **/.output
 **/.nitro
+**/.vercel
+**/.wrangler
 package-lock.json
 yarn.lock
 pnpm-lock.yaml

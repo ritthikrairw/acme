@@ -12,38 +12,38 @@ export default defineConfig(() => ({
   // },
   build: {
     commonjsOptions: {
-      transformMixedEsModules: true,
+      transformMixedEsModules: true
     },
     emptyOutDir: true,
     outDir: "./dist",
-    reportCompressedSize: true,
+    reportCompressedSize: true
   },
   cacheDir: "../../node_modules/.vite/apps/tanstack-start",
   plugins: [
     tsConfigPaths({
-      projects: ["./tsconfig.json"],
+      projects: ["./tsconfig.json"]
     }),
-    tanstackStart({ customViteReactPlugin: true }),
-    viteReact(),
+    tanstackStart({ customViteReactPlugin: true, target: "node-server" }),
+    viteReact()
   ],
   preview: {
     host: "localhost",
-    port: 4200,
+    port: 4200
   },
   root: __dirname,
   server: {
     host: "localhost",
-    port: 4200,
+    port: 4200
   },
   test: {
     coverage: {
       provider: "v8" as const,
-      reportsDirectory: "./test-output/vitest/coverage",
+      reportsDirectory: "./test-output/vitest/coverage"
     },
     environment: "jsdom",
     globals: true,
     include: ["{src,tests}/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
     reporters: ["default"],
-    watch: false,
-  },
+    watch: false
+  }
 }));

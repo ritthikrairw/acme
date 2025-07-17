@@ -4,10 +4,10 @@ yarn.lock
 
 .DS_Store
 .cache
-.env
 .vercel
 .output
 .nitro
+.wrangler
 /build/
 /api/
 /server/build

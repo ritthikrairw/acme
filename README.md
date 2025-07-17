@@ -62,6 +62,7 @@ This repository serves as a boilerplate for building scalable and maintainable a
 - 🚧 Implement the environment build for Development, Staging, Production
 - 🚧 Add unit tests for all applications and libraries.
 - 🚧 Implement the cache on build
+- 🚧 Waiting for @dotenvx/dotenvx support Cloudflare Pages/Workers (Not support yet)
 
 ---
 

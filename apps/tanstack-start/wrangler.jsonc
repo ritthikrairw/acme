@@ -1,0 +1,28 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "acme-tanstack-start",
+  "main": ".output/server/index.mjs",
+  "compatibility_date": "2025-05-05",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "binding": "ASSETS",
+    "directory": ".output/public"
+  },
+  "logpush": true,
+  "limits": {
+    "cpu_ms": 300000
+  },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+  "placement": {
+    "mode": "smart"
+  },
+  "routes": [
+    {
+      "pattern": "acme-tanstack-start.ritthikrai.com",
+      "custom_domain": true
+    }
+  ]
+}

@@ -3,12 +3,102 @@
   "version": "0.0.1",
   "private": true,
   "type": "module",
+  "scripts": {
+    "dev": "dotenvx run -- vite dev",
+    "start": "dotenvx run -- vite start",
+    "env:encrypt": "dotenvx encrypt",
+    "env:decrypt": "dotenvx decrypt",
+    "wrangler:typegen": "wrangler types --env-interface CloudflareBindings",
+    "wrangler:secret": "wrangler secret bulk .env",
+    "wrangler:preview": "wrangler dev .output/server/index.mjs",
+    "wrangler:deploy": "wrangler deploy"
+  },
   "nx": {
     "name": "tanstack-start",
     "projectType": "application",
     "tags": [
       "type:app",
       "scope:tanstack-start"
-    ]
+    ],
+    "targets": {
+      "build": {
+        "options": {
+          "cwd": "{projectRoot}",
+          "command": "dotenvx run -- vite build"
+        },
+        "cache": true,
+        "dependsOn": [
+          "env:encrypt",
+          "^build"
+        ],
+        "inputs": [
+          "production",
+          "^production",
+          {
+            "externalDependencies": [
+              "vite"
+            ]
+          }
+        ],
+        "outputs": [
+          "{projectRoot}/.output"
+        ],
+        "metadata": {
+          "technologies": [
+            "vite"
+          ],
+          "description": "Run Vite build",
+          "help": {
+            "command": "npx vite build --help",
+            "example": {
+              "options": {
+                "sourcemap": true,
+                "manifest": "manifest.json"
+              }
+            }
+          }
+        },
+        "syncGenerators": [
+          "@nx/js:typescript-sync"
+        ],
+        "executor": "nx:run-commands",
+        "configurations": {},
+        "parallelism": false
+      },
+      "container": {
+        "executor": "@nx-tools/nx-container:build",
+        "dependsOn": [
+          "build"
+        ],
+        "options": {
+          "load": false,
+          "push": true,
+          "platforms": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "metadata": {
+            "labels": [
+              "org.opencontainers.image.title=ACME TanStack Start",
+              "org.opencontainers.image.licenses=Proprietary",
+              "org.opencontainers.image.description=TanStack Start application for the ACME project"
+            ],
+            "images": [
+              "ghcr.io/ritthikrairw/acme-tanstack-start"
+            ],
+            "tags": [
+              "type=schedule",
+              "type=ref,event=branch",
+              "type=ref,event=tag",
+              "type=ref,event=pr",
+              "type=semver,pattern={{version}}",
+              "type=semver,pattern={{major}}.{{minor}}",
+              "type=semver,pattern={{major}}",
+              "type=sha"
+            ]
+          }
+        }
+      }
+    }
   }
 }
