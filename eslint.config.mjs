@@ -1,9 +1,11 @@
 import nx from '@nx/eslint-plugin';
+import perfectionist from 'eslint-plugin-perfectionist';
 
 export default [
   ...nx.configs['flat/base'],
   ...nx.configs['flat/typescript'],
   ...nx.configs['flat/javascript'],
+  perfectionist.configs['recommended-natural'],
   {
     ignores: [
       '**/dist',
@@ -17,46 +19,46 @@ export default [
       '@nx/enforce-module-boundaries': [
         'error',
         {
-          enforceBuildableLibDependency: true,
           allow: ['^.*/eslint(\\.base)?\\.config\\.[cm]?[jt]s$'],
           depConstraints: [
             {
+              onlyDependOnLibsWithTags: [
+                'type:feature',
+                'type:ui',
+                'type:util',
+              ],
               sourceTag: 'type:app',
-              onlyDependOnLibsWithTags: [
-                'type:feature',
-                'type:ui',
-                'type:util',
-              ],
             },
             {
-              sourceTag: 'type:e2e',
               onlyDependOnLibsWithTags: [],
+              sourceTag: 'type:e2e',
             },
             {
-              sourceTag: 'type:feature',
               onlyDependOnLibsWithTags: [
                 'type:feature',
                 'type:ui',
                 'type:util',
               ],
+              sourceTag: 'type:feature',
             },
             {
-              sourceTag: 'type:data-access',
               onlyDependOnLibsWithTags: ['type:data-access', 'type:util'],
+              sourceTag: 'type:data-access',
             },
             {
-              sourceTag: 'type:ui',
               onlyDependOnLibsWithTags: ['type:ui', 'type:util'],
+              sourceTag: 'type:ui',
             },
             {
-              sourceTag: 'type:util',
               onlyDependOnLibsWithTags: ['type:util'],
+              sourceTag: 'type:util',
             },
             {
-              sourceTag: 'scope:shared',
               onlyDependOnLibsWithTags: ['scope:shared'],
+              sourceTag: 'scope:shared',
             },
           ],
+          enforceBuildableLibDependency: true,
         },
       ],
     },

@@ -1,4 +1,5 @@
 import type { Config } from 'jest';
+
 import nextJest from 'next/jest.js';
 
 const createJestConfig = nextJest({
@@ -6,14 +7,14 @@ const createJestConfig = nextJest({
 });
 
 const config: Config = {
+  coverageDirectory: '../../coverage/apps/frontend',
   displayName: '@acme/frontend',
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   preset: '../../jest.preset.js',
+  testEnvironment: 'jsdom',
   transform: {
     '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '@nx/react/plugins/jest',
   },
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/apps/frontend',
-  testEnvironment: 'jsdom',
 };
 
 export default createJestConfig(config);

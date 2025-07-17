@@ -1,7 +1,7 @@
 'use client';
 
-import { Button, Card } from '@acme/shared-ui';
 import { Home } from '@acme/shared-feature';
+import { Button, Card } from '@acme/shared-ui';
 import { formatDate } from '@acme/shared-util';
 
 export default function Index() {

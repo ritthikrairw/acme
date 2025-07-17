@@ -1,4 +1,7 @@
 {
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always"
+  },
   "eslint.enable": true,
   "eslint.format.enable": true,
   "nxConsole.generateAiAgentRules": true
