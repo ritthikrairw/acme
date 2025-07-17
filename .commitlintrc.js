@@ -235,12 +235,10 @@ module.exports = {
   prompt: {
     allowBreakingChanges: ["feat", "fix"],
     allowCustomScopes: true,
-    allowTicketNumber: false,
     confirmColorize: true,
     maxSubjectLength: 100,
     minSubjectLength: 3,
     scopes,
-    themeColorCode: "#6f42c1",
     types,
     upperCaseSubject: true,
   },
