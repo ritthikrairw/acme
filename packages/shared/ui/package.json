@@ -17,6 +17,15 @@
     "tags": [
       "type:ui",
       "scope:shared"
-    ]
+    ],
+    "targets": {
+      "generate:barrel": {
+        "executor": "nx:run-commands",
+        "options": {
+          "command": "ctix build",
+          "cwd": "{projectRoot}"
+        }
+      }
+    }
   }
 }

@@ -5,7 +5,9 @@
   "scripts": {
     "format": "prettier --ignore-unknown --write .",
     "lint": "nx run-many --target lint --all",
+    "typecheck": "nx run-many --target typecheck --all",
     "prepare": "husky install",
+    "generate:barrel": "nx run-many --target generate:barrel --all",
     "commit": "cz"
   },
   "config": {
@@ -53,6 +55,7 @@
     "@swc/cli": "~0.6.0",
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",
+    "@tanstack/eslint-plugin-query": "^5.81.2",
     "@testing-library/dom": "10.4.0",
     "@testing-library/react": "16.1.0",
     "@types/jest": "^29.5.12",

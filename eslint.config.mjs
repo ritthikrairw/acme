@@ -1,19 +1,28 @@
 import nx from "@nx/eslint-plugin";
+import pluginQuery from "@tanstack/eslint-plugin-query";
 import perfectionist from "eslint-plugin-perfectionist";
 
 export default [
   ...nx.configs["flat/base"],
   ...nx.configs["flat/typescript"],
   ...nx.configs["flat/javascript"],
+  ...pluginQuery.configs["flat/recommended"],
   perfectionist.configs["recommended-natural"],
   {
     ignores: [
       "**/dist",
       "**/vite.config.*.timestamp*",
       "**/vitest.config.*.timestamp*",
+      "**/.nx",
       "**/.next",
-      "**/test-output",
-    ],
+      "**/.tanstack",
+      "**/.nitro",
+      "**/.vercel",
+      "**/.wrangler",
+      "**/.output",
+      "**/node_modules",
+      "**/test-output"
+    ]
   },
   {
     files: ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
@@ -28,42 +37,40 @@ export default [
                 "type:feature",
                 "type:ui",
                 "type:util",
+                "type:data-access"
               ],
-              sourceTag: "type:app",
+              sourceTag: "type:app"
             },
             {
               onlyDependOnLibsWithTags: [],
-              sourceTag: "type:e2e",
+              sourceTag: "type:e2e"
             },
             {
               onlyDependOnLibsWithTags: [
                 "type:feature",
                 "type:ui",
                 "type:util",
+                "type:data-access"
               ],
-              sourceTag: "type:feature",
+              sourceTag: "type:feature"
             },
             {
               onlyDependOnLibsWithTags: ["type:data-access", "type:util"],
-              sourceTag: "type:data-access",
+              sourceTag: "type:data-access"
             },
             {
               onlyDependOnLibsWithTags: ["type:ui", "type:util"],
-              sourceTag: "type:ui",
+              sourceTag: "type:ui"
             },
             {
               onlyDependOnLibsWithTags: ["type:util"],
-              sourceTag: "type:util",
-            },
-            {
-              onlyDependOnLibsWithTags: ["scope:shared"],
-              sourceTag: "scope:shared",
-            },
+              sourceTag: "type:util"
+            }
           ],
-          enforceBuildableLibDependency: false,
-        },
-      ],
-    },
+          enforceBuildableLibDependency: false
+        }
+      ]
+    }
   },
   {
     files: [
@@ -74,9 +81,9 @@ export default [
       "**/*.js",
       "**/*.jsx",
       "**/*.cjs",
-      "**/*.mjs",
+      "**/*.mjs"
     ],
     // Override or add rules here
-    rules: {},
-  },
+    rules: {}
+  }
 ];

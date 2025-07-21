@@ -4,5 +4,22 @@
   },
   "eslint.enable": true,
   "eslint.format.enable": true,
-  "nxConsole.generateAiAgentRules": true
+  "nxConsole.generateAiAgentRules": true,
+  "cSpell.words": [
+    "APPWRITE",
+    "authen",
+    "bprogress",
+    "Filemaker",
+    "heroui",
+    "iconify"
+  ],
+  "files.watcherExclude": {
+    "**/routeTree.gen.ts": true
+  },
+  "search.exclude": {
+    "**/routeTree.gen.ts": true
+  },
+  "files.readonlyInclude": {
+    "**/routeTree.gen.ts": true
+  }
 }

@@ -21,7 +21,16 @@
     "tags": [
       "type:data-access",
       "scope:shared"
-    ]
+    ],
+    "targets": {
+      "generate:barrel": {
+        "executor": "nx:run-commands",
+        "options": {
+          "command": "ctix build",
+          "cwd": "{projectRoot}"
+        }
+      }
+    }
   },
   "dependencies": {
     "tslib": "^2.3.0"
